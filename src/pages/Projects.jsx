@@ -6,7 +6,7 @@ import { projects } from '../data';
 const Projects = () => {
   return (
     <Layout>
-      <main className="container mx-auto max-width pt-10 mb-20 mt-20">
+      <main className="container mx-auto max-width pt-10 mb-20 mt-10">
         <section>
           <h1 className="text-1xl text-dark-primary dark:text-light-primary md:text-3xl xl:text-4xl xl:leading-tight font-bold capitalize text-center">
             Projects

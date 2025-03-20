@@ -1,14 +1,13 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { logo } from '../../../assets';
 
 export const Footer = () => {
   return (
     <footer className="container mx-auto max-width pb-10 pt-10 mt-20">
       <div className="flex justify-between items-center py-2">
-        <NavLink to="/">
+        <div>
           <img className="w-12" src={logo} alt="logo" />
-        </NavLink>
+        </div>
         <ul className="flex justify-evenly items-center my-5 md:my-0 md:space-x-5 md:mr-5">
           <li>
             <a href="https://www.instagram.com/aldimardiansh/" target="_blank" rel="noreferrer noopener">
@@ -59,24 +58,8 @@ export const Footer = () => {
         </ul>
       </div>
       <hr className="my-4" />
-      <div className="flex justify-between items-center py-2">
-        <ul className="text-dark-content dark:text-light-content font-medium md:flex items-center md:space-x-5 md:mr-10">
-          <li className="pb-1 md:pb-0">
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li className="pb-1 md:pb-0">
-            <NavLink to="/">About</NavLink>
-          </li>
-          <li className="pb-1 md:pb-0">
-            <NavLink to="/">Technologies</NavLink>
-          </li>
-          <li className="pb-1 md:pb-0">
-            <NavLink to="/">Projects</NavLink>
-          </li>
-          <li className="pb-1 md:pb-0">
-            <NavLink to="/">Contact</NavLink>
-          </li>
-        </ul>
+      <div className="text-center text-dark-content dark:text-light-content">
+        <p>© 2025 Aldi Mardiansah. All rights reserved.</p>
       </div>
     </footer>
   );
