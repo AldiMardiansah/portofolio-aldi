@@ -15,14 +15,34 @@ const ScrollToTop = () => {
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
   const toggler = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <ScrollToTop />
-      <header className="container mx-auto md:flex justify-between py-2 max-width sticky top-0 bg-white dark:bg-dark-background z-50">
+      <header
+        className={`container mx-auto md:flex justify-between py-2 max-width sticky top-0 z-50 transition-colors duration-300 ${
+          scrolled
+            ? 'bg-white dark:bg-slate-900 shadow-md'
+            : 'bg-transparent'
+        }`}
+      >
         <div className="flex justify-between items-center py-2">
           <NavLink to="/">
             <img className="w-12" src={logo} alt="logo" />
